@@ -60,7 +60,7 @@ class meth():
 			button1 = types.InlineKeyboardButton("Следуший отзыв =>", callback_data='12')
 			markup.add(button1) 
 
-			bot.send_message(message.chat.id, DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), reply_markup=markup)  
+			bot.send_message(message.chat.id, DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), parse_mode = "markdown", reply_markup=markup)  
 
 		if self.status==True and message.text != '💬 Посмотреть отзывы' and message.text !='🖊 Написать отзыв' and message.text != '🖊 Изменить отзыв':
 			
@@ -102,7 +102,7 @@ class meth():
 					button2 = types.InlineKeyboardButton("<= Предыдущий отзыв", callback_data='13')
 					markup.add(button2)
 
-					bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), reply_markup=markup) 
+					bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), parse_mode = "markdown", reply_markup=markup) 
 
 				else:
 					markup = types.InlineKeyboardMarkup()
@@ -111,7 +111,7 @@ class meth():
 					markup.add(button2, button1) 
 
 					
-					bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), reply_markup=markup) 
+					bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), parse_mode = "markdown", reply_markup=markup) 
 
 			elif call.data == '13':
 				self.counter-=1
@@ -121,7 +121,7 @@ class meth():
 					button1 = types.InlineKeyboardButton("Следуший отзыв =>", callback_data='12')
 					markup.add(button1) 
 
-					bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), reply_markup=markup) 
+					bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), parse_mode = "markdown", reply_markup=markup) 
 
 				else:
 					markup = types.InlineKeyboardMarkup()
@@ -129,7 +129,7 @@ class meth():
 					button2 = types.InlineKeyboardButton("<= Предыдущий отзыв", callback_data='13')
 					markup.add(button2, button1) 
 
-					bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), reply_markup=markup) 
+					bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=DB.GetStarFeedbackDB(self.counter, self.maxcounter, a), parse_mode = "markdown", reply_markup=markup) 
 
 			elif "⭐" in call.data:
 				DB.quest(call.data, self.quest,call.message.chat.id)
