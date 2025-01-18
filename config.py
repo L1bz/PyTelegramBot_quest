@@ -1,3 +1,3 @@
 import telebot
 
-BOT_TOKEN = ''
+BOT_TOKEN = 'asdfasdfasdf'
